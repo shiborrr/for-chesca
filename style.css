@@ -32,7 +32,7 @@ body {
 /* Letter content styling */
 .letter {
   display: none;
-  font-size: 14px; /* Increased font size for better readability */
+  font-size: 12px; /* Increased font size for better readability */
   opacity: 0;
   max-width: 100%; /* Ensure the content fits */
   line-height: 1.5;
