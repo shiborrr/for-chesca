@@ -1,0 +1,108 @@
+
+/* Basic reset */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: 'Lilita One', cursive;
+  font-weight: bold;
+  position: relative;
+}
+/* Make only Dearest Chesca and Yours Markus bold */
+.bold-text {
+  font-weight: bold;
+}
+
+.reveal-button, .reveal-button-2 {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  transition: opacity 1.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ensure buttons stay clickable */
+}
+
+/* Fade-out effect for the first button */
+.fade-out {
+  opacity: 0;
+  transition: opacity 1.5s ease;  /* Ensure it fades out smoothly */
+}
+
+/* Letter content styling */
+.letter {
+  display: none;
+  font-size: 15px;
+  opacity: 0;
+  max-width: 600px;
+  height: 0;
+  overflow: hidden;
+  line-height: 1.5;
+  white-space: nowrap;
+  transform-origin: top;
+  transition: opacity 1.5s ease-out, height 1s ease-in-out, transform 1s ease-out;
+  text-align: justify; /* Justify the text */
+}
+
+.show {
+  display: block;
+  opacity: 1;
+  height: auto;
+  white-space: normal;
+  transform: rotateX(0deg);
+}
+
+/* Slide-in animation */
+.letter p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button styling */
+.reveal-button-2 {
+  display: none;  /* Initially hide the second button (envelope) */
+}
+
+/* Fade-out effect for the envelope */
+.reveal-button-2.fade-out {
+  opacity: 0;
+  transition: opacity 1.5s ease; /* Envelope fades out just like the first button */
+}
+
+/* Particle styles */
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  z-index: 3;
+}
+
+.particle.pop {
+  opacity: 1;
+  transform: translateY(-50px) scale(0.5); /* Make particles pop and move */
+}
+
+/* Container for particles */
+#particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Make sure particles are below buttons */
+}
